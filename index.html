@@ -1,0 +1,161 @@
+<!-- Create the HTML Boilerplate -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber1Boss.com</title>
+    
+    <!-- Google Translate html-->
+        <div id="lang-bar"></div>
+        <script src="./assets/languages.js"></script>
+</head>
+<center><body>
+    <h1><center>Portfolio: Marcin </center></h1>
+    <h2><center>Web Developer, IT Specialist</center></h2>
+    <hr/>
+    <h3>
+        <a href="./public/movie-ranking.html">Movie Ranking Project <br/>
+            <img 
+            height="200"
+            src="./assets/images/movie-ranking.png" alt="movie site preview" />
+        </a>
+    </h3>
+    <h3>
+        <a href="./public/Grand-Reopening.html">Grand Reopening<br/>
+            <img 
+            height="200"
+            src="./assets/images/Grand-Reopening.png" alt="Reopening preview" />
+        </a>
+    </h3>
+    <h3>
+        <a href="./public/about.html">About Us<br/>
+            <img 
+            height="200"
+            src="./assets/images/about.png" alt="about preview" />
+        </a>
+    </h3>
+    <h3>
+        <a href="./public/contact.html">Contact<br/>
+            <img 
+            height="150"
+            src="./assets/images/contact.png" alt="contact preview" />
+        </a> 
+    </h3>
+    <br/>
+<p>
+    The required fields have an asterisk(*)
+</p>
+    
+<!-- Tutaj zaczne forme-->
+<form id="contactForm" style="max-width: 400px; display: flex; flex-direction: column; gap: 10px;">
+
+    <input type="text" id="extra_field" name="extra_field" style="display:none !important" tabindex="-1" autocomplete="off">
+    
+    <label for="name">Name*</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email*</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="phone">Phone Number (Optional)</label>
+    <input type="tel" id="phone" name="phone">
+    
+    <label for="message">Question/Comment*</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    
+    <button type="submit" id="submitBtn" style="padding: 10px; cursor: pointer;">Submit Request</button>
+</form>
+
+<script>
+  // 1. URL FROM GOOGLE HERE
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxxJovZQHiSCtnOU9nTgEefAjaYQMncuCRL_g7qyfznH76-cp76QaM49zGtBR4quUTo/exec';
+  
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    // UI Feedback: Disable button so they don't click twice
+    btn.disabled = true;
+    btn.innerText = "Sending...";
+
+    // 2. Klucz zaszyfrowany B64
+    const _0x4a2 = "bXlfc3RhcnR1cF9zZWN1cmVfMTIzIzMyMQ=="; 
+
+    // 3. PREPARE THE DATA OBJECT
+    const formData = {
+      secret: atob(_0x4a2), // Unscrambles the key for the script
+      extra_field: document.getElementById('extra_field').value,
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value, 
+      message: document.getElementById('message').value
+    };
+
+    // 4. SEND DATA TO GOOGLE
+    fetch(scriptURL, {
+      method: 'POST',
+      mode: 'no-cors', // Use no-cors to prevent common browser redirect errors
+      body: JSON.stringify(formData)
+    })
+    .then(() => {
+      // SUCCESS logic
+      alert('Thank you! Your inquiry has been submitted successfully.');
+      form.reset();
+      btn.disabled = false;
+      btn.innerText = "Submit Request";
+    })
+    .catch(error => {
+      // ERROR logic
+      console.error('Error!', error.message);
+      alert('Submission failed. Please check your connection and try again.');
+      btn.disabled = false;
+      btn.innerText = "Submit Request";
+    });
+  });
+</script>
+
+
+
+
+
+</body></center>
+</html>
+<center><footer class="site-footer">
+    <div class="footer-content">
+        <p class="copyright-text">
+             &copy; <span id="current-year">2026</span> <strong>Cyber Boss</strong>. 
+            All Rights Reserved.
+        </p>
+
+        <p class="ip-statement">
+            The content, layout, design, data, and graphics on this website are protected by United States and international copyright laws. 
+            Unauthorized use or reproduction is strictly prohibited.
+        </p>
+
+        <p class="disclaimer">
+            <strong>Disclaimer:</strong> The information provided on this website is for general informational purposes only. 
+            It does not constitute professional advice. Use of this site, and any reliance on the information herein, 
+            is solely at your own risk.
+        </p>
+
+        <nav class="footer-links">
+            <a href="./public/terms-of-service.html">Terms of Service</a> | 
+            <a href="./public/Privacy-Policy.html">Privacy Policy</a> | 
+            <a href="./public/Disclaimer.html">Full Disclaimer</a> | 
+            <a href="./public/contact.html">Contact</a>
+        </nav>
+
+        <p class="jurisdiction">
+            All legal matters are governed by the laws of the State of Illinois.
+        </p>
+    </div>
+</footer>
+
+<script>
+    // Automatically updates the year so your copyright doesn't look expired
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+</script>
+<a href="./index.html">Home</a></center>
