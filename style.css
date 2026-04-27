@@ -1,0 +1,14 @@
+div {
+    padding: solid RED 20%;
+    background: black;
+    margin-left: 25%;
+    width: 50%;
+    align-items: center;
+    margin-top: 25%;
+    color: white;
+}
+
+.image1 {
+    border: solid white 5px;
+    width:100%;
+}
