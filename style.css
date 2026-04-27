@@ -1,6 +1,5 @@
 div {
-    padding: solid RED 20%;
-    background: black;
+    background: #66CDAA;
     margin-left: 25%;
     width: 50%;
     align-items: center;
@@ -9,6 +8,5 @@ div {
 }
 
 .image1 {
-    border: solid white 5px;
     width:100%;
 }
