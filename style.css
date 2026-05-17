@@ -59,3 +59,7 @@ header {
         background-position: 0% 50%;
     }
 }
+
+#caller {
+    border-radius: 20px;
+}
