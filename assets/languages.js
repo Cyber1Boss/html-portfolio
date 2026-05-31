@@ -17,6 +17,17 @@
     /* [ADDED] Logic to hide the Google Translate attribution bar for a cleaner UI */
     .goog-te-banner-frame { display: none !important; }
     body { top: 0 !important; }
+
+    /* Targets contact form buttons to round their corners */
+     input[type="submit"], button {
+       border-radius: 8px !important;       
+       transition: background-color 0.2s ease !important;
+     }
+
+     /* Targets text inputs, textareas, and dropdown menus to round off the corners */
+     input:not([type="submit"]), textarea, select {
+       border-radius: 8px !important;
+     }
   `;
   document.head.appendChild(style);
 })();
