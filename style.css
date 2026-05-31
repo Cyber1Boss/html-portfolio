@@ -31,6 +31,7 @@ header {
     background-blend-mode: multiply;           /* Blends color and image */
     background-size: cover;
     background-position: center;
+    border-radius: 5px;
 }
 
 .job {
