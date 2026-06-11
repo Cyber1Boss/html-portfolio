@@ -1,9 +1,17 @@
+
 div {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     color: black;
     text-align: center;
+}
+
+.job {
+    color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 h1, h2, h3 {
@@ -34,12 +42,14 @@ header {
     border-radius: 5px;
 }
 
-.job {
-    color:aliceblue;
+.certs {
+    padding-top: 25px;
+    color:goldenrod;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
 
 .gradient-background {
     background: linear-gradient(300deg, #52d4ff, #ff5de9, #ffcd29);
